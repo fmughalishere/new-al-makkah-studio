@@ -139,7 +139,11 @@ export default function Contact() {
               >
                 <iframe
                   title={`Al Makkah Studio — ${activeLocation.label}`}
-                  src={`https://maps.google.com/maps?q=${activeLocation.lat},${activeLocation.lng}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
+                  src={
+                    "lat" in activeLocation && "lng" in activeLocation
+                      ? `https://maps.google.com/maps?q=${activeLocation.lat},${activeLocation.lng}&t=&z=15&ie=UTF8&iwloc=&output=embed`
+                      : `https://maps.google.com/maps?q=${encodeURIComponent(activeLocation.mapQuery)}&t=&z=15&ie=UTF8&iwloc=&output=embed`
+                  }
                   className="w-full h-full border-0"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"

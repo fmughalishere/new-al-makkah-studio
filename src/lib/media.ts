@@ -36,10 +36,34 @@ export function video(name: string) {
   )}.mp4`;
 }
 
+/**
+ * A cropped, web-optimised 1200x630 version of an image — used for the
+ * Open Graph / Twitter share preview (og:image).
+ */
+export function ogImage(name: string) {
+  return `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/c_fill,g_auto,w_1200,h_630,q_auto,f_jpg/${IMAGE_VERSION}/${slugify(
+    name
+  )}.jpg`;
+}
+
+/** A square crop of an image, used for manifest / favicon-style icons. */
+export function iconImage(name: string, size: number) {
+  return `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/c_fill,g_auto,w_${size},h_${size},q_auto,f_png/${IMAGE_VERSION}/${slugify(
+    name
+  )}.png`;
+}
+
+// The canonical, public URL the site is served from — every absolute link
+// (Open Graph, Twitter cards, sitemap, robots.txt, JSON-LD) is built from
+// this one place. Update it here (or via the NEXT_PUBLIC_SITE_URL env var
+// in Vercel) once a custom domain is attached.
+export const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://al-makkah-studio.vercel.app";
+
 // Studio locations — used by the Contact section and the Google Map embed.
 // Lahore is the primary/first studio, Phool Nagar is the secondary branch.
-// Both carry exact coordinates (from each studio's Google Maps pin) so the
-// embedded map points precisely at the right spot.
+// Lahore carries exact coordinates (from the studio's Google Maps pin); a
+// location without lat/lng falls back to a text address search on the map.
 export const LOCATIONS = [
   {
     id: "lahore",
@@ -52,10 +76,8 @@ export const LOCATIONS = [
   {
     id: "phool-nagar",
     label: "Phool Nagar (Branch)",
-    address: "Main Multan Road, Phool Nagar, Punjab",
-    mapQuery: "Main Multan Road, Phool Nagar, Punjab, Pakistan",
-    lat: 31.205781,
-    lng: 73.9370389,
+    address: "Akma Market, Abbas IT Center, Phool Nagar, 55260",
+    mapQuery: "Akma Market, Abbas IT Center, Phool Nagar, 55260, Pakistan",
   },
 ] as const;
 

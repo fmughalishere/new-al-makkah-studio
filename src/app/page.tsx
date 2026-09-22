@@ -14,7 +14,14 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
 
   return (
-    <main className="relative bg-paper-50 dark:bg-ink-950 min-h-screen transition-colors duration-300">
+    <main id="top" className="relative bg-paper-50 dark:bg-ink-950 min-h-screen transition-colors duration-300">
+      {/* Persistent, screen-reader/SEO-only H1 — the animated intro also has
+          its own H1, but that one unmounts after the splash finishes, so a
+          crawler needs this one to always find the page's main heading. */}
+      <h1 className="sr-only">
+        Al Makkah Studio — Wedding & Cinematic Photography in Lahore & Phool Nagar, Punjab
+      </h1>
+
       <AnimatePresence mode="wait">
         {loading && <Intro key="intro-screen" setFinish={setLoading} />}
       </AnimatePresence>

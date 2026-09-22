@@ -44,9 +44,9 @@ export default function Intro({ setFinish }: { setFinish: (val: boolean) => void
           <span className="block text-amber-500 text-[9px] tracking-[0.6em] uppercase font-bold mb-5">
             Est. Punjab
           </span>
-          <h1 className="font-display italic text-white text-4xl sm:text-6xl md:text-7xl font-medium leading-[1.05]">
+          <p className="font-display italic text-white text-4xl sm:text-6xl md:text-7xl font-medium leading-[1.05]">
             Al Makkah <span className="text-amber-500">Studio</span>
-          </h1>
+          </p>
 
           <motion.div
             initial={{ width: 0 }}
