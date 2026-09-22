@@ -49,7 +49,9 @@ export default function EditingSection() {
           >
             <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-xl overflow-hidden border border-amber-500/20 shrink-0">
               <img
-                src={image("editor-profile")}
+                src={image("editor-profile", 260)}
+                loading="lazy"
+                decoding="async"
                 alt="Danial Munir"
                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
               />
@@ -88,7 +90,9 @@ export default function EditingSection() {
             className="relative h-[220px] sm:h-[240px] md:h-[260px] rounded-2xl overflow-hidden border border-black/10 dark:border-white/10 group shadow-xl"
           >
             <img
-              src={image("editing-pic")}
+              src={image("editing-pic", 900)}
+              loading="lazy"
+              decoding="async"
               alt="Editing Station"
               className="w-full h-full object-cover transition duration-700 group-hover:scale-105"
             />

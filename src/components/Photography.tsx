@@ -71,11 +71,11 @@ export default function Photography() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.4 }}
-              onClick={() => setSelectedImg(image(img.name))}
+              onClick={() => setSelectedImg(img.name)}
               className="cursor-pointer break-inside-avoid group relative overflow-hidden rounded-xl border border-black/5 dark:border-white/5 bg-paper-100 dark:bg-zinc-900"
             >
               <img
-                src={image(img.name)}
+                src={image(img.name, 500)}
                 alt={img.category}
                 className="w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
                 loading="lazy"
@@ -117,7 +117,7 @@ export default function Photography() {
               className="relative w-full h-full flex items-center justify-center cursor-zoom-out"
             >
               <img
-                src={selectedImg}
+                src={image(selectedImg, 1600)}
                 className="max-w-full max-h-[85vh] md:max-h-[90vh] object-contain rounded-lg shadow-2xl border border-white/10"
                 alt="Enlarged view"
               />

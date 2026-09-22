@@ -27,7 +27,7 @@ export default function Intro({ setFinish }: { setFinish: (val: boolean) => void
             className="w-full h-full relative"
           >
             <img
-              src={image(img)}
+              src={image(img, 500)}
               alt="Studio gear"
               className="w-full h-full object-cover grayscale brightness-90"
             />

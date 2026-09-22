@@ -30,7 +30,8 @@ export default function Navbar() {
             <div className="absolute -inset-1 bg-gradient-to-r from-amber-500/50 to-amber-700/50 rounded-full blur opacity-25 group-hover:opacity-60 transition duration-500" />
             <div className="relative h-full w-full rounded-full overflow-hidden border border-amber-500/30 bg-black shadow-2xl">
               <img
-                src={image("logo")}
+                src={image("logo", 160)}
+                decoding="async"
                 alt="Al Makkah Studio Logo"
                 className="h-full w-full object-cover scale-110 group-hover:scale-125 transition-transform duration-500"
               />

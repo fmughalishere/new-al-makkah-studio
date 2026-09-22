@@ -19,9 +19,20 @@ function slugify(name: string) {
 /**
  * Resolve a Cloudinary image URL from the file's original base name
  * (no extension), e.g. image("Canon R6") or image("aesthetic").
+ *
+ * Pass `width` to request a size-capped, responsively-downscaled version
+ * (c_limit keeps aspect ratio and never upscales) instead of the full
+ * original resolution — this is what keeps page-weight down for images
+ * that are only ever displayed small (thumbnails, avatars, grid tiles).
+ * Omit it only for images shown at large/full size (e.g. the lightbox).
  */
-export function image(name: string, ext: "jpg" | "png" | "webp" = "jpg") {
-  return `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/f_auto,q_auto/${IMAGE_VERSION}/${slugify(
+export function image(
+  name: string,
+  width?: number,
+  ext: "jpg" | "png" | "webp" = "jpg"
+) {
+  const sizing = width ? `c_limit,w_${width},` : "";
+  return `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/${sizing}f_auto,q_auto/${IMAGE_VERSION}/${slugify(
     name
   )}.${ext}`;
 }

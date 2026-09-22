@@ -57,7 +57,7 @@ export default function SocialAndReviews() {
               className="relative aspect-[4/5] rounded-xl overflow-hidden border border-black/5 dark:border-white/5 bg-paper-100 dark:bg-zinc-900 group shadow-lg"
             >
               <img
-                src={image(img)}
+                src={image(img, 700)}
                 alt="Social Post"
                 loading="lazy"
                 className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"

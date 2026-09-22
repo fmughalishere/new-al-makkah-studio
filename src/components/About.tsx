@@ -17,7 +17,10 @@ export default function About() {
         >
           <div className="absolute -inset-3 border border-amber-600/30 rounded-2xl -z-10 hidden md:block" />
           <img
-            src={image("profile-pic")}
+            src={image("profile-pic", 900)}
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
             alt="M. Hussnain Mughal"
             className="w-full aspect-[4/5] object-cover rounded-xl shadow-2xl grayscale hover:grayscale-0 transition duration-1000 border border-black/5"
           />

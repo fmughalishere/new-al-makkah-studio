@@ -32,7 +32,9 @@ export default function Packages() {
 
             <div className="relative h-[400px] sm:h-[500px] md:h-[600px] rounded-2xl overflow-hidden shadow-2xl group border border-black/10 dark:border-white/5">
               <img
-                src={image("couple-shoot3")}
+                src={image("couple-shoot3", 1200)}
+                loading="lazy"
+                decoding="async"
                 alt="Cinematic Wedding Photography"
                 className="absolute inset-0 w-full h-full object-cover transition duration-1000 group-hover:scale-105"
               />
