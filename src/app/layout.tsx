@@ -1,6 +1,7 @@
 import './globals.css'
 import Script from 'next/script'
 import { Inter, Montserrat, Playfair_Display } from 'next/font/google'
+import { Analytics } from "@vercel/analytics/next"
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-montserrat' })
@@ -40,6 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         suppressHydrationWarning
       >
         {children}
+        <Analytics />
       </body>
     </html>
   )
