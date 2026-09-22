@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+/* Class-based dark mode: add/remove `dark` on <html> to switch themes.
+   Default (no class) renders the light theme; `.dark` renders the
+   original ink/champagne look the site launched with. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ---------------------------------------------------------------------- */
+/* Al Makkah Studio — design tokens                                       */
+/* A refined "ink & champagne" palette replaces the old flat amber/black. */
+/* Overriding Tailwind's amber scale means every existing amber-* class   */
+/* across the site now renders in the new champagne-gold automatically,  */
+/* and the new ink / paper tones power the alternating light/dark bands. */
+/* ---------------------------------------------------------------------- */
+@theme {
+  --color-amber-50: #fbf6ec;
+  --color-amber-100: #f4e8cf;
+  --color-amber-200: #e8d19f;
+  --color-amber-300: #dbb96f;
+  --color-amber-400: #cca24e;
+  --color-amber-500: #b8873f;
+  --color-amber-600: #9c6f30;
+  --color-amber-700: #7c5726;
+  --color-amber-800: #5e4019;
+  --color-amber-900: #402b10;
+
+  --color-ink-950: #08090a;
+  --color-ink-900: #0b0c0e;
+  --color-ink-800: #131417;
+  --color-ink-700: #1b1c20;
+  --color-ink-600: #3a3c42;
+  --color-ink-500: #5a5d66;
+  --color-ink-400: #83868f;
+
+  --color-paper-50: #faf7f0;
+  --color-paper-100: #f4efe3;
+  --color-paper-200: #ece2cd;
+
+  --font-display: var(--font-playfair), "Georgia", serif;
+  --font-sans: var(--font-inter), var(--font-montserrat), ui-sans-serif, system-ui;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #faf7f0;
+}
+
+html.dark {
+  background-color: #08090a;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--color-amber-500);
+  color: #08090a;
+}
+
+/* Thin, gold-tinted scrollbar for a more designed feel (webkit only) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #ece2cd;
+}
+.dark ::-webkit-scrollbar-track {
+  background: #0b0c0e;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-amber-700);
+  border-radius: 999px;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
