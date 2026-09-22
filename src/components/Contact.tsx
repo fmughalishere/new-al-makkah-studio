@@ -13,7 +13,7 @@ const FacebookIcon = ({ className }: { className?: string }) => (
 );
 
 export default function Contact() {
-  const [activeLocation, setActiveLocation] = useState(LOCATIONS[0]);
+  const [activeLocation, setActiveLocation] = useState<(typeof LOCATIONS)[number]>(LOCATIONS[0]);
 
   const socialLinks = [
     { name: "Studio Instagram", href: "https://www.instagram.com/almakkahstudio/", icon: <InstagramIcon className="w-4 h-4" /> },
