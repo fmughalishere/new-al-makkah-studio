@@ -77,7 +77,7 @@ export default function Photography() {
               <img
                 src={image(img.name, 500)}
                 alt={img.category}
-                className="w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
+                className="w-full h-auto md:grayscale md:group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
                 loading="lazy"
                 onError={(e) => {
                   e.currentTarget.style.display = "none";

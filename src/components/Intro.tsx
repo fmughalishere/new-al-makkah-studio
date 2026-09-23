@@ -29,7 +29,7 @@ export default function Intro({ setFinish }: { setFinish: (val: boolean) => void
             <img
               src={image(img, 500)}
               alt="Studio gear"
-              className="w-full h-full object-cover grayscale brightness-90"
+              className="w-full h-full object-cover md:grayscale brightness-90"
             />
           </motion.div>
         ))}

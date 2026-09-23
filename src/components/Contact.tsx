@@ -135,7 +135,7 @@ export default function Contact() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.4 }}
-                className="w-full h-[200px] sm:h-[240px] md:h-[280px] grayscale hover:grayscale-0 transition-all duration-700"
+                className="w-full h-[200px] sm:h-[240px] md:h-[280px] md:grayscale md:hover:grayscale-0 transition-all duration-700"
               >
                 <iframe
                   title={`Al Makkah Studio — ${activeLocation.label}`}

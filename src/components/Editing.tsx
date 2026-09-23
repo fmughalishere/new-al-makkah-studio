@@ -53,7 +53,7 @@ export default function EditingSection() {
                 loading="lazy"
                 decoding="async"
                 alt="Danial Munir"
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                className="w-full h-full object-cover md:grayscale md:hover:grayscale-0 transition-all duration-500"
               />
             </div>
 

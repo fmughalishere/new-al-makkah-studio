@@ -22,7 +22,7 @@ export default function About() {
             fetchPriority="high"
             decoding="async"
             alt="M. Hussnain Mughal"
-            className="w-full aspect-[4/5] object-cover rounded-xl shadow-2xl grayscale hover:grayscale-0 transition duration-1000 border border-black/5"
+            className="w-full aspect-[4/5] object-cover rounded-xl shadow-2xl md:grayscale md:hover:grayscale-0 transition duration-1000 border border-black/5"
           />
         </motion.div>
 
